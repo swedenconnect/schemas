@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-    targetNamespace="http://id.elegnamnden.se/csig/1.1/dss-ext/ns"
+    targetNamespace="http://id.elegnamnden.se/csig/1.0/dss-ext/ns"
     xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dss="urn:oasis:names:tc:dss:1.0:core:schema"
-    xmlns:csig="http://id.elegnamnden.se/csig/1.1/dss-ext/ns">
+    xmlns:eid2="http://id.elegnamnden.se/csig/1.0/dss-ext/ns">
     <xs:annotation>
-        <xs:documentation>Schema location URL: https://elegnamnden.github.io/schemas/csig/1.1/EidCentralSigDssExt-1.1.xsd</xs:documentation>
+        <xs:documentation>Schema location URL: https://elegnamnden.github.io/schemas/csig/1.0/EidCentralSigDssExt-1.0.xsd</xs:documentation>
     </xs:annotation>
     <xs:import namespace="urn:oasis:names:tc:SAML:2.0:assertion"
         schemaLocation="https://docs.oasis-open.org/security/saml/v2.0/saml-schema-assertion-2.0.xsd"/>
-    <xs:element name="SignRequestExtension" type="csig:SignRequestExtensionType">
+    <xs:element name="SignRequestExtension" type="eid2:SignRequestExtensionType">
         <xs:annotation>
             <xs:documentation>Extension to an OASIS DSS SignRequest, providing additional 
 information about a sign request. This element extends the 
 dss:OptionalInputs element of a dss:SignRequest.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="SignResponseExtension" type="csig:SignResponseExtensionType">
+    <xs:element name="SignResponseExtension" type="eid2:SignResponseExtensionType">
         <xs:annotation>
             <xs:documentation>Extension to an OASIS DSS SignResponse, providing additional information 
 about a sign response. This element extends the dss:OptionalOutput element 
 of a dss:SignResponse.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="SignTasks" type="csig:SignTasksType"/>
-    <xs:element name="SignTaskData" type="csig:SignTaskDataType"/>
+    <xs:element name="SignTasks" type="eid2:SignTasksType"/>
+    <xs:element name="SignTaskData" type="eid2:SignTaskDataType"/>
     <xs:element name="RequestTime" type="xs:dateTime">
         <xs:annotation>
             <xs:documentation>Time when the request was created</xs:documentation>
@@ -68,27 +68,26 @@ urn:oasis:names:tc:SAML:2.0:nameid-format:entity.</xs:documentation>
 when generating the requested signature.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="CertRequestProperties" type="csig:CertRequestPropertiesType">
+    <xs:element name="CertRequestProperties" type="eid2:CertRequestPropertiesType">
         <xs:annotation>
             <xs:documentation>The requested properties of the signature certificate being issued by the 
 signature service.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="RequestedCertAttributes" type="csig:RequestedAttributesType">
+    <xs:element name="RequestedCertAttributes" type="eid2:RequestedAttributesType">
         <xs:annotation>
             <xs:documentation>An optional set of requested attributes that the requesting service prefers 
 or requires in the subject name of the generated signing certificate.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="OtherProperties" type="csig:AnyType"/>
-    <xs:element name="SignMessage" type="csig:SignMessageType">
+    <xs:element name="OtherProperties" type="eid2:AnyType"/>
+    <xs:element name="SignMessage" type="xs:base64Binary">
         <xs:annotation>
-            <xs:documentation>Sign message included as a choice of a Base64 encoded string or an ecrypted sign message.</xs:documentation>
+            <xs:documentation>A Base64 encoded string that provides a html encoded message to the signer. 
+The encoded string MUST be encoded using UTF-8 character encoding.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="Message" type="xs:base64Binary"/>
-    <xs:element name="EncryptedMessage" type="saml:EncryptedElementType"/>
-    <xs:element name="OtherRequestInfo" type="csig:AnyType">
+    <xs:element name="OtherRequestInfo" type="eid2:AnyType">
         <xs:annotation>
             <xs:documentation>Any additional inputs to the request extension.</xs:documentation>
         </xs:annotation>
@@ -106,7 +105,7 @@ related to this sign response. This element MUST be present if signing was
 successful.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="SignerAssertionInfo" type="csig:SignerAssertionInfoType">
+    <xs:element name="SignerAssertionInfo" type="eid2:SignerAssertionInfoType">
         <xs:annotation>
             <xs:documentation>An element of type SignerAssertionInfoType holding information about how 
 the signer was authenticated by the sign service as well as information 
@@ -115,9 +114,9 @@ the signer, which was incorporated into the signer certificate. This element
 MUST be present if signing was successful.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="ContextInfo" type="csig:ContextInfoType"/>
-    <xs:element name="SamlAssertions" type="csig:SAMLAssertionsType"/>
-    <xs:element name="SignatureCertificateChain" type="csig:CertificateChainType">
+    <xs:element name="ContextInfo" type="eid2:ContextInfoType"/>
+    <xs:element name="SamlAssertions" type="eid2:SAMLAssertionsType"/>
+    <xs:element name="SignatureCertificateChain" type="eid2:CertificateChainType">
         <xs:annotation>
             <xs:documentation>An element of type CertificateChainType holding the signer certificate as 
 well as other certificates that may be used to validate the signature. This 
@@ -126,7 +125,7 @@ certificate that are necessary to compile a complete and functional signed
 document.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="OtherResponseInfo" type="csig:AnyType">
+    <xs:element name="OtherResponseInfo" type="eid2:AnyType">
         <xs:annotation>
             <xs:documentation>Optional sign response elements of type AnyType.</xs:documentation>
         </xs:annotation>
@@ -138,20 +137,20 @@ PDF and common modes of CMS this is the DER encoded SignedAttributess field.
 For XML this is the canonicalized SignedInfo octets.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="AdESObject" type="csig:AdESObjectType">
+    <xs:element name="AdESObject" type="eid2:AdESObjectType">
         <xs:annotation>
             <xs:documentation>Information in support of AdES signature creation</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="Base64Signature" type="csig:Base64SignatureType">
+    <xs:element name="Base64Signature" type="eid2:Base64SignatureType">
         <xs:annotation>
             <xs:documentation>Result signature bytes</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="OtherSignTaskData" type="csig:AnyType"/>
+    <xs:element name="OtherSignTaskData" type="eid2:AnyType"/>
     <xs:complexType name="SignRequestExtensionType">
         <xs:sequence>
-            <xs:element ref="csig:RequestTime"/>
+            <xs:element ref="eid2:RequestTime"/>
             <xs:element ref="saml:Conditions">
                 <xs:annotation>
                     <xs:documentation>Conditions that MUST be evaluated when assessing the validity of and/or 
@@ -164,18 +163,18 @@ contain one saml:Audience element, specifying the return URL for any
 resulting Sign Response message.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="csig:Signer" minOccurs="0"/>
-            <xs:element ref="csig:IdentityProvider"/>
-            <xs:element ref="csig:SignRequester"/>
-            <xs:element ref="csig:SignService"/>
-            <xs:element minOccurs="0" ref="csig:RequestedSignatureAlgorithm"/>
-            <xs:element minOccurs="0" ref="csig:CertRequestProperties"/>
-            <xs:element minOccurs="0" ref="csig:SignMessage" maxOccurs="1"/>
-            <xs:element minOccurs="0" ref="csig:OtherRequestInfo"/>
+            <xs:element ref="eid2:Signer" minOccurs="0"/>
+            <xs:element ref="eid2:IdentityProvider"/>
+            <xs:element ref="eid2:SignRequester"/>
+            <xs:element ref="eid2:SignService"/>
+            <xs:element minOccurs="0" ref="eid2:RequestedSignatureAlgorithm"/>
+            <xs:element minOccurs="0" ref="eid2:CertRequestProperties"/>
+            <xs:element minOccurs="0" ref="eid2:SignMessage"/>
+            <xs:element minOccurs="0" ref="eid2:OtherRequestInfo"/>
         </xs:sequence>
-        <xs:attribute name="Version" type="xs:string" use="optional" default="1.1">
+        <xs:attribute name="Version" type="xs:string" use="optional" default="1.0">
             <xs:annotation>
-                <xs:documentation>The version of this specification. If absent, the version value defaults to "1.1". 
+                <xs:documentation>The version of this specification. If absent, the version value defaults to "1.0". 
 This attribute provide means for the receiving service to determine the 
 expected syntax of the response based on protocol version.</xs:documentation>
             </xs:annotation>
@@ -183,11 +182,11 @@ expected syntax of the response based on protocol version.</xs:documentation>
     </xs:complexType>
     <xs:complexType name="SignResponseExtensionType">
         <xs:sequence>
-            <xs:element ref="csig:ResponseTime"/>
-            <xs:element minOccurs="0" ref="csig:Request"/>
-            <xs:element maxOccurs="1" minOccurs="0" ref="csig:SignerAssertionInfo"/>
-            <xs:element minOccurs="0" ref="csig:SignatureCertificateChain"/>
-            <xs:element minOccurs="0" ref="csig:OtherResponseInfo"/>
+            <xs:element ref="eid2:ResponseTime"/>
+            <xs:element minOccurs="0" ref="eid2:Request"/>
+            <xs:element maxOccurs="1" minOccurs="0" ref="eid2:SignerAssertionInfo"/>
+            <xs:element minOccurs="0" ref="eid2:SignatureCertificateChain"/>
+            <xs:element minOccurs="0" ref="eid2:OtherResponseInfo"/>
         </xs:sequence>
         <xs:attribute name="Version" type="xs:string" default="1.0">
             <xs:annotation>
@@ -207,7 +206,7 @@ expected syntax of the response based on protocol version.</xs:documentation>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="AttributeAuthority"
                 type="saml:NameIDType"/>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="SamlAttributeName"
-                type="csig:PreferredSAMLAttributeNameType"/>
+                type="eid2:PreferredSAMLAttributeNameType"/>
         </xs:sequence>
         <xs:attribute name="CertAttributeRef" type="xs:string" use="optional"/>
         <xs:attribute name="CertNameType" default="rdn" use="optional">
@@ -226,7 +225,7 @@ expected syntax of the response based on protocol version.</xs:documentation>
     <xs:complexType name="RequestedAttributesType">
         <xs:sequence>
             <xs:element maxOccurs="unbounded" minOccurs="1" name="RequestedCertAttribute"
-                type="csig:MappedAttributeType"/>
+                type="eid2:MappedAttributeType"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="AnyType">
@@ -248,15 +247,15 @@ expected syntax of the response based on protocol version.</xs:documentation>
     </xs:complexType>
     <xs:complexType name="SignTasksType">
         <xs:sequence>
-            <xs:element maxOccurs="unbounded" ref="csig:SignTaskData"/>
+            <xs:element maxOccurs="unbounded" ref="eid2:SignTaskData"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SignTaskDataType">
         <xs:sequence>
-            <xs:element ref="csig:ToBeSignedBytes"/>
-            <xs:element maxOccurs="1" minOccurs="0" ref="csig:AdESObject"/>
-            <xs:element minOccurs="0" ref="csig:Base64Signature"/>
-            <xs:element minOccurs="0" ref="csig:OtherSignTaskData"/>
+            <xs:element ref="eid2:ToBeSignedBytes"/>
+            <xs:element maxOccurs="1" minOccurs="0" ref="eid2:AdESObject"/>
+            <xs:element minOccurs="0" ref="eid2:Base64Signature"/>
+            <xs:element minOccurs="0" ref="eid2:OtherSignTaskData"/>
         </xs:sequence>
         <xs:attribute name="SignTaskId" type="xs:string">
             <xs:annotation>
@@ -304,7 +303,7 @@ service when processing data in this element.</xs:documentation>
         <xs:sequence>
             <xs:element minOccurs="0" name="SignatureId" type="xs:string"/>
             <xs:element minOccurs="0" name="AdESObjectBytes" type="xs:base64Binary"/>
-            <xs:element minOccurs="0" name="OtherAdESData" type="csig:AnyType"/>
+            <xs:element minOccurs="0" name="OtherAdESData" type="eid2:AnyType"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="CertRequestPropertiesType">
@@ -315,8 +314,8 @@ service when processing data in this element.</xs:documentation>
 certificate subject should be authenticated.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" ref="csig:RequestedCertAttributes"/>
-            <xs:element minOccurs="0" ref="csig:OtherProperties"/>
+            <xs:element minOccurs="0" ref="eid2:RequestedCertAttributes"/>
+            <xs:element minOccurs="0" ref="eid2:OtherProperties"/>
         </xs:sequence>
         <xs:attribute default="PKC" name="CertType">
             <xs:simpleType>
@@ -330,9 +329,9 @@ certificate subject should be authenticated.</xs:documentation>
     </xs:complexType>
     <xs:complexType name="SignerAssertionInfoType">
         <xs:sequence>
-            <xs:element ref="csig:ContextInfo"/>
+            <xs:element ref="eid2:ContextInfo"/>
             <xs:element ref="saml:AttributeStatement"/>
-            <xs:element minOccurs="0" ref="csig:SamlAssertions"/>
+            <xs:element minOccurs="0" ref="eid2:SamlAssertions"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ContextInfoType">
@@ -351,23 +350,5 @@ certificate subject should be authenticated.</xs:documentation>
                 <xs:attribute name="Type" type="xs:anyURI"/>
             </xs:extension>
         </xs:simpleContent>
-    </xs:complexType>
-    <xs:complexType name="SignMessageType">
-        <xs:choice>
-            <xs:element ref="csig:Message"/>
-            <xs:element ref="csig:EncryptedMessage"/>
-        </xs:choice>
-        <xs:attribute name="MustShow" type="xs:boolean" default="false"/>
-        <xs:attribute name="DisplayEntity" type="xs:anyURI"/>
-        <xs:attribute name="MimeType" default="text">
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="text/html"/>
-                    <xs:enumeration value="text"/>
-                    <xs:enumeration value="text/markdown"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:anyAttribute namespace="##other" processContents="lax"/>
     </xs:complexType>
 </xs:schema>
