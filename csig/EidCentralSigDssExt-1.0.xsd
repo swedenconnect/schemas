@@ -6,6 +6,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dss="urn:oasis:names:tc:dss:1.0:core:schema"
     xmlns:eid2="http://id.elegnamnden.se/csig/1.0/dss-ext/ns">
+    <xs:annotation>
+        <xs:documentation>Schema location URL: https://elegnamnden.github.io/schemas/csig/1.0/EidCentralSigDssExt-1.0.xsd</xs:documentation>
+    </xs:annotation>
     <xs:import namespace="urn:oasis:names:tc:SAML:2.0:assertion"
         schemaLocation="https://docs.oasis-open.org/security/saml/v2.0/saml-schema-assertion-2.0.xsd"/>
     <xs:element name="SignRequestExtension" type="eid2:SignRequestExtensionType">
