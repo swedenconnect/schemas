@@ -7,7 +7,7 @@
     xmlns:dss="urn:oasis:names:tc:dss:1.0:core:schema"
     xmlns:eid2="http://id.elegnamnden.se/csig/1.0/dss-ext/ns">
     <xs:import namespace="urn:oasis:names:tc:SAML:2.0:assertion"
-        schemaLocation="saml-schema-assertion-2.0.xsd"/>
+        schemaLocation="https://docs.oasis-open.org/security/saml/v2.0/saml-schema-assertion-2.0.xsd"/>
     <xs:element name="SignRequestExtension" type="eid2:SignRequestExtensionType">
         <xs:annotation>
             <xs:documentation>Extension to an OASIS DSS SignRequest, providing additional 
