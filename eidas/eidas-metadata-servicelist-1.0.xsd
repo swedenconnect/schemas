@@ -8,11 +8,11 @@
   
   <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd" />
   
-  <annotation>
-    <documentation>
+  <xs:annotation>
+    <xs:documentation>
       Document identifier: eidas-metadata-servicelist-1.0 
-    </documentation>
-  </annotation>  
+    </xs:documentation>
+  </xs:annotation>  
   
   <xs:element name="MetadataServiceList" type="ser:MetadataServiceListType" />
   
@@ -79,7 +79,7 @@
       <xs:element type="ser:MetadataLocationType" name="MetadataLocation" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
     <xs:attribute name="Territory" type="xs:string" use="required" />
-    <xs:anyAttribute namespace="##other" processContents="lax"/>
+    <xs:anyAttribute namespace="##other" processContents="lax" />
   </xs:complexType>  
   
   <xs:complexType name="DistributionPointsType">
