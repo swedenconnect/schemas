@@ -89,7 +89,7 @@
   <xs:complexType name="DistributionPointsType">
     <xs:annotation>
       <xs:documentation>
-        A list of distribution points. URLs from where ....
+        A list of distribution points. URLs from where the metadata service list can be downloaded.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
