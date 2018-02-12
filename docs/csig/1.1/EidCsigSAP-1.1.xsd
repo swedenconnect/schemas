@@ -6,6 +6,7 @@
     <xs:annotation>
         <xs:documentation>Schema location URL: https://elegnamnden.github.io/schemas/csig/1.1/EidCsigSAP-1.1.xsd</xs:documentation>
     </xs:annotation>
+
     <xs:element name="SADRequest" type="sap:SADRequestType" />
 
     <xs:complexType name="SADRequestType">
@@ -16,14 +17,14 @@
             <xs:element minOccurs="0" name="RequestParams">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Parameter" type="sap:ParamType" />
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Parameter" type="sap:ParameterType" />
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="ParamType">
+    <xs:complexType name="ParameterType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute name="Name" type="xs:string" use="required" />
