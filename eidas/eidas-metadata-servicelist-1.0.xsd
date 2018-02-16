@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema version="1.0"
-  attributeFormDefault="unqualified" elementFormDefault="qualified" 
+<xs:schema version="1.0" attributeFormDefault="unqualified" elementFormDefault="qualified"
   targetNamespace="http://eidas.europa.eu/metadata/servicelist"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  xmlns:ser="http://eidas.europa.eu/metadata/servicelist" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ser="http://eidas.europa.eu/metadata/servicelist"
   xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-  
-  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd" />
-  
+
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#"
+    schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"/>
+
   <xs:annotation>
     <xs:documentation>
       Document identifier: eidas-metadata-servicelist-1.0 
     </xs:documentation>
-  </xs:annotation>  
-  
-  <xs:element name="MetadataServiceList" type="ser:MetadataServiceListType" />
-  
+  </xs:annotation>
+
+  <xs:element name="MetadataServiceList" type="ser:MetadataServiceListType"/>
+
   <xs:complexType name="MetadataServiceListType">
     <xs:annotation>
       <xs:documentation>
@@ -24,10 +24,11 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="SchemeInformation" type="ser:SchemeInformationType" />
-      <xs:element name="MetadataList" type="ser:MetadataSchemeEndpointListType" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="DistributionPoints" type="ser:DistributionPointsType" />
-      <xs:element ref="ds:Signature" minOccurs="0" />
+      <xs:element name="SchemeInformation" type="ser:SchemeInformationType"/>
+      <xs:element name="MetadataList" type="ser:MetadataSchemeEndpointListType" minOccurs="0"
+        maxOccurs="unbounded"/>
+      <xs:element name="DistributionPoints" type="ser:DistributionPointsType"/>
+      <xs:element ref="ds:Signature" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="Version" type="xs:string" use="required">
       <xs:annotation>
@@ -57,8 +58,8 @@
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
-  </xs:complexType>  
-  
+  </xs:complexType>
+
   <xs:complexType name="SchemeInformationType">
     <xs:annotation>
       <xs:documentation>
@@ -67,12 +68,12 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="IssuerName" type="xs:string" />
-      <xs:element name="SchemeIdentifier" type="xs:anyURI" />
-      <xs:element name="SchemeTerritory" type="xs:string" />
+      <xs:element name="IssuerName" type="xs:string"/>
+      <xs:element name="SchemeIdentifier" type="xs:anyURI"/>
+      <xs:element name="SchemeTerritory" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataSchemeEndpointListType">
     <xs:annotation>
       <xs:documentation>
@@ -80,12 +81,13 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element type="ser:MetadataLocationType" name="MetadataLocation" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element type="ser:MetadataLocationType" name="MetadataLocation" minOccurs="0"
+        maxOccurs="unbounded"/>
     </xs:sequence>
-    <xs:attribute name="Territory" type="xs:string" use="required" />
-    <xs:anyAttribute namespace="##other" processContents="lax" />
-  </xs:complexType>  
-  
+    <xs:attribute name="Territory" type="xs:string" use="required"/>
+    <xs:anyAttribute namespace="##any" processContents="lax"/>
+  </xs:complexType>
+
   <xs:complexType name="DistributionPointsType">
     <xs:annotation>
       <xs:documentation>
@@ -93,10 +95,10 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="DistributionPoint" type="xs:anyURI" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="DistributionPoint" type="xs:anyURI" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-    
+
   <xs:complexType name="MetadataLocationType">
     <xs:sequence>
       <xs:element name="Endpoint" type="ser:MsEndpointType" minOccurs="0" maxOccurs="unbounded">
@@ -122,8 +124,9 @@
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:anyAttribute namespace="##any" processContents="lax"/>
   </xs:complexType>
-  
+
   <xs:complexType name="MsEndpointType">
     <xs:annotation>
       <xs:documentation>
@@ -148,7 +151,7 @@
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:anyAttribute namespace="##other" processContents="lax" />
+    <xs:anyAttribute namespace="##any" processContents="lax"/>
   </xs:complexType>
-    
+
 </xs:schema>
