@@ -7,17 +7,18 @@
         <xs:documentation>Schema location URL: https://elegnamnden.github.io/schemas/csig/1.1/EidCsigSAP-1.1.xsd</xs:documentation>
     </xs:annotation>
 
-    <xs:element name="SADRequest" type="sap:SADRequestType" />
+    <xs:element name="SADRequest" type="sap:SADRequestType"/>
 
     <xs:complexType name="SADRequestType">
         <xs:sequence>
-            <xs:element name="SignRequestID" type="xs:string" />
-            <xs:element name="DocCount" type="xs:int" />
-            <xs:element name="RequestedVersion" type="xs:string" default="1.0" />
+            <xs:element name="SignRequestID" type="xs:string"/>
+            <xs:element name="DocCount" type="xs:int"/>
+            <xs:element name="RequestedVersion" type="xs:string" default="1.0" minOccurs="0"/>
             <xs:element minOccurs="0" name="RequestParams">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Parameter" type="sap:ParameterType" />
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Parameter"
+                            type="sap:ParameterType"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -27,7 +28,7 @@
     <xs:complexType name="ParameterType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="Name" type="xs:string" use="required" />
+                <xs:attribute name="Name" type="xs:string" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
