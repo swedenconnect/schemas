@@ -1,4 +1,4 @@
-![Logo](https://github.com/swedenconnect/resources/blob/master/logos/sweden-connect-only-text-122x50.png)
+![Logo](docs/img/sweden-connect.png)
 
 ------
 
