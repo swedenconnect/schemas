@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings version="2.1"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:annox="http://annox.dev.java.net"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+  jaxb:extensionBindingPrefixes="xjc annox">
+  
+  <jaxb:globalBindings generateElementProperty="false" generateIsSetMethod="true">
+    <xjc:simple />
+  </jaxb:globalBindings>
+  
+  <!-- <jaxb:bindings xmlns:tns="http://www.w3.org/2001/04/xmlenc#" if-exists="true" scd="x-schema::tns"> -->
+  
+  <jaxb:bindings schemaLocation="xenc-schema.xsd" node="//xsd:schema">  
+    <jaxb:schemaBindings>
+      <jaxb:package name="se.swedenconnect.schemas.xmlenc" />
+    </jaxb:schemaBindings> 
+    
+    <!-- 
+    <jaxb:bindings node="//xsd:complexType[@name='EncryptedDataType']">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="EncryptedData" />      
+      </annox:annotate>
+    </jaxb:bindings>
+    -->
+<!-- 
+    <jaxb:bindings if-exists="true" scd="~tns:EncryptedData">
+      <class ref="se.swedenconnect.schemas.xmlenc.EncryptedData"/>
+    </jaxb:bindings>
+-->    
+  
+  </jaxb:bindings>
+    
+</jaxb:bindings>

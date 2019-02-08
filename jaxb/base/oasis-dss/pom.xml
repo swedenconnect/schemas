@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>oasis-dss-jaxb</artifactId>
+  <packaging>jar</packaging>
+
+  <parent>
+    <groupId>se.swedenconnect.schemas</groupId>
+    <artifactId>base-schemas-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <name>Sweden Connect Schemas :: OASIS DSS JAXB</name>
+  <description>JAXB project for required OASIS DSS schema used by Sweden Connect schemas</description>
+  <url>https://github.com/swedenconnect/schemas</url>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/swedenconnect/schemas.git</connection>
+    <developerConnection>scm:git:https://github.com/swedenconnect/schemas.git</developerConnection>
+    <url>https://github.com/swedenconnect/schemas/tree/master</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Martin Lindström</name>
+      <email>martin@idsec.se</email>
+      <organization>IDsec Solutions AB</organization>
+      <organizationUrl>http://www.idsec.se</organizationUrl>
+    </developer>
+    
+    <developer>
+      <name>Stefan Santesson</name>
+      <email>stefan@idsec.se</email>
+      <organization>IDsec Solutions AB</organization>
+      <organizationUrl>http://www.idsec.se</organizationUrl>
+    </developer>
+  </developers>
+
+  <properties>
+  </properties>
+
+  <dependencies>
+  
+    <dependency>
+      <groupId>se.swedenconnect.schemas</groupId>
+      <artifactId>xmldsig-jaxb</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+          
+  </dependencies>
+
+  <build>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <goals>
+          <goal>generate</goal>
+        </goals>
+        <executions>
+          <execution>
+            <id>generate-api</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaIncludes>
+                <schemaInclude>oasis-dss-core-schema-v1.0-os.xsd</schemaInclude>
+              </schemaIncludes>
+              <schemaExcludes>
+                <schemaExclude>base-xsd/*.xsd</schemaExclude>
+              </schemaExcludes>
+              <bindingIncludes>dss.xjb</bindingIncludes>
+              <catalog>${basedir}/src/main/resources/dss.cat</catalog>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <!-- 
+        XJC has a bug where it generates an ObjectFactory class for imported code. This will 
+        clash since there is already such a class in place (from the dependency), so we delete 
+        the generated packages.  
+      -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>process-sources</phase>
+            <configuration>
+              <target>
+                <delete dir="${project.build.directory}/generated-sources/xjc/se/swedenconnect/schemas/xmldsig" />
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>            
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+</project>

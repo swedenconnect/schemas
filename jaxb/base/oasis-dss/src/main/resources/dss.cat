@@ -1,0 +1,5 @@
+REWRITE_SYSTEM "http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/" "maven:se.swedenconnect.schemas:xmldsig-jaxb:jar::!/"
+REWRITE_SYSTEM "http://www.w3.org/TR/xmldsig-core/" "maven:se.swedenconnect.schemas:xmldsig-jaxb:jar::!/"
+
+REWRITE_SYSTEM "http://www.w3.org/2001/xml.xsd" "base-xsd/xml.xsd"
+REWRITE_SYSTEM "http://www.oasis-open.org/committees/download.php/3408/oasis-sstc-saml-schema-protocol-1.1.xsd" "base-xsd/oasis-sstc-saml-schema-protocol-1.1.xsd"

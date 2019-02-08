@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings version="2.1"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:annox="http://annox.dev.java.net"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+  jaxb:extensionBindingPrefixes="xjc annox">
+  
+  <jaxb:globalBindings generateElementProperty="false" generateIsSetMethod="true">
+    <xjc:simple />
+  </jaxb:globalBindings>
+  
+  <!-- 
+  <jaxb:bindings schemaLocation="oasis-sstc-saml-schema-protocol-1.1.xsd" node="//xsd:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="se.swedenconnect.schemas.saml_1_1.assertion" />
+    </jaxb:schemaBindings>  
+  </jaxb:bindings>
+  -->
+  
+  <jaxb:bindings schemaLocation="saml-schema-assertion-2.0.xsd" node="//xsd:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="se.swedenconnect.schemas.saml_2_0.assertion" />
+    </jaxb:schemaBindings>  
+  </jaxb:bindings>  
+  
+</jaxb:bindings>

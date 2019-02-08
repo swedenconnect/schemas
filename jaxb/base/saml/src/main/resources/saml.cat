@@ -1,0 +1,4 @@
+REWRITE_SYSTEM "http://www.w3.org/TR/xmldsig-core/" "maven:se.swedenconnect.schemas:xmldsig-jaxb:jar::!/"
+REWRITE_SYSTEM "http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/" "maven:se.swedenconnect.schemas:xmldsig-jaxb:jar::!/"
+
+REWRITE_SYSTEM "http://www.w3.org/TR/2002/REC-xmlenc-core-20021210/" "maven:se.swedenconnect.schemas:xmlenc-jaxb:jar::!/"
