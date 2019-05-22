@@ -13,9 +13,17 @@
   
   <xs:complexType name="PrincipalSelectionType">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="MatchValue" type="psc:MatchValueType" minOccurs="1" />
+      <xs:element name="MatchValue" type="psc:MatchValueType" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
+  
+  <xs:element name="RequestedPrincipalSelection" type="psc:RequestedPrincipalSelectionType" />
+
+  <xs:complexType name="RequestedPrincipalSelectionType">
+    <xs:complexContent>
+      <xs:extension base="psc:PrincipalSelectionType" />
+    </xs:complexContent>
+  </xs:complexType>  
   
   <xs:complexType name="MatchValueType">
     <xs:simpleContent>
