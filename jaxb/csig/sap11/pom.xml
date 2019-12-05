@@ -68,6 +68,7 @@
         <executions>
           <execution>
             <id>generate-api</id>
+            <phase>generate-sources</phase>
             <goals>
               <goal>generate</goal>
             </goals>

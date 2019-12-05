@@ -18,12 +18,4 @@
     </jaxb:schemaBindings>  
   </jaxb:bindings>
   
-  <!-- 
-  <jaxb:bindings xmlns:tns="urn:oasis:names:tc:SAML:1.0:assertion" if-exists="true" scd="x-schema::tns">
-    <jaxb:schemaBindings>
-      <jaxb:package name="se.swedenconnect.schemas.saml_1_1.assertion" />
-    </jaxb:schemaBindings>  
-  </jaxb:bindings>
-  -->
-  
 </jaxb:bindings>

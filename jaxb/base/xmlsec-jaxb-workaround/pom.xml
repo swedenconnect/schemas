@@ -3,17 +3,17 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>base-schemas-parent</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>xmlsec-jaxb-workaround</artifactId>
+  <packaging>jar</packaging>
 
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
-    <artifactId>schemas-parent</artifactId>
+    <artifactId>base-schemas-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <name>Sweden Connect Schemas :: Parent POM for base JAXB projects</name>
-  <description>Parent POM for JAXB projects for required for Sweden Connect schemas</description>
+  <name>Sweden Connect Schemas :: Apache xmlsec workaround</name>
+  <description>Workaround JAR for Apache xmlsec that does not export JAXB episode file</description>
   <url>https://github.com/swedenconnect/schemas</url>
 
   <licenses>
@@ -36,30 +36,16 @@
       <email>martin@idsec.se</email>
       <organization>IDsec Solutions AB</organization>
       <organizationUrl>http://www.idsec.se</organizationUrl>
-    </developer>  
-    <developer>
-      <name>Stefan Santesson</name>
-      <email>stefan@idsec.se</email>
-      <organization>IDsec Solutions AB</organization>
-      <organizationUrl>http://www.idsec.se</organizationUrl>
     </developer>
   </developers>
 
-  <properties>
-  </properties>
-  
-  <dependencyManagement>
+  <dependencies>
 
-    <dependencies>
+    <dependency>
+      <groupId>org.apache.santuario</groupId>
+      <artifactId>xmlsec</artifactId>
+    </dependency>
 
-    </dependencies>
-
-  </dependencyManagement>
-
-  <modules>
-    <module>xmlsec-jaxb-workaround</module>
-    <module>saml</module>
-    <module>oasis-dss</module>
-  </modules>
+  </dependencies>
 
 </project>

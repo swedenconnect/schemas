@@ -54,10 +54,10 @@
   
     <dependency>
       <groupId>se.swedenconnect.schemas</groupId>
-      <artifactId>xmldsig-jaxb</artifactId>
+      <artifactId>xmlsec-jaxb-workaround</artifactId>
       <version>${project.version}</version>
     </dependency>
-          
+              
   </dependencies>
 
   <build>
@@ -73,6 +73,7 @@
         <executions>
           <execution>
             <id>generate-api</id>
+            <phase>generate-sources</phase>
             <goals>
               <goal>generate</goal>
             </goals>
@@ -103,7 +104,7 @@
             <phase>process-sources</phase>
             <configuration>
               <target>
-                <delete dir="${project.build.directory}/generated-sources/xjc/se/swedenconnect/schemas/xmldsig" />
+                <delete dir="${project.build.directory}/generated-sources/xjc/org" />
               </target>
             </configuration>
             <goals>
