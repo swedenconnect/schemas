@@ -1,0 +1,5 @@
+REWRITE_SYSTEM "http://uri.etsi.org/01903/v1.3.2/" "maven:se.swedenconnect.schemas:etsi-xades-jaxb:jar::!/"
+REWRITE_SYSTEM "http://www.w3.org/TR/2008/REC-xmldsig-core-20080610/" "maven:se.swedenconnect.schemas:xmlsec-jaxb-workaround:jar::!/"
+
+
+

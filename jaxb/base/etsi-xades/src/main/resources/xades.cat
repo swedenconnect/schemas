@@ -1,0 +1,3 @@
+REWRITE_SYSTEM "http://www.w3.org/TR/2008/REC-xmldsig-core-20080610/" "maven:se.swedenconnect.schemas:xmlsec-jaxb-workaround:jar::!/"
+
+

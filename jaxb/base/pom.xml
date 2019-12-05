@@ -60,6 +60,8 @@
     <module>xmlsec-jaxb-workaround</module>
     <module>saml</module>
     <module>oasis-dss</module>
+    <module>etsi-xades</module>
+    <module>etsi-xades-ext</module>
   </modules>
 
 </project>
