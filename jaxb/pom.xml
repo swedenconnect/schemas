@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
@@ -7,7 +6,7 @@
   <groupId>se.swedenconnect.schemas</groupId>
   <artifactId>schemas-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 
   <name>Sweden Connect Schemas :: Parent POM for JAXB projects</name>
   <description>Parent POM for JAXB projects for Sweden Connect schemas</description>
@@ -26,6 +25,17 @@
     <developerConnection>scm:git:https://github.com/swedenconnect/schemas.git</developerConnection>
     <url>https://github.com/swedenconnect/schemas/tree/master</url>
   </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 
   <developers>
     <developer>
@@ -60,12 +70,12 @@
   <dependencyManagement>
 
     <dependencies>
-    
+
       <dependency>
         <groupId>org.apache.santuario</groupId>
         <artifactId>xmlsec</artifactId>
         <version>${xmlsec.version}</version>
-      </dependency>    
+      </dependency>
 
       <dependency>
         <groupId>org.jvnet.annox</groupId>
@@ -211,7 +221,7 @@
             </plugins>
           </configuration>
         </plugin>
- 
+
         <plugin>
           <groupId>org.jvnet.jaxb2_commons</groupId>
           <artifactId>jaxb2-basics</artifactId>
@@ -223,7 +233,7 @@
           <artifactId>jaxb2-basics-annotate</artifactId>
           <version>${jaxb2-basics-annotate.version}</version>
         </plugin>
-        
+
 
       </plugins>
 
@@ -237,6 +247,23 @@
 
       <build>
         <plugins>
+
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.8</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+              <!-- 
+                Allows manual inspection of the staging repo before deploying it to the central repo. 
+                Use 'mvn nexus-staging:release -Prelease' to release and 
+                'mvn nexus-staging:drop' to abort. 
+              -->
+            </configuration>
+          </plugin>
 
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
