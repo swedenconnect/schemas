@@ -4,7 +4,7 @@
     xmlns:sap="http://id.elegnamnden.se/csig/1.1/sap/ns">
 
     <xs:annotation>
-        <xs:documentation>Schema location URL: https://elegnamnden.github.io/schemas/csig/1.1/EidCsigSAP-1.1.xsd</xs:documentation>
+        <xs:documentation>Schema location URL: https://docs.swedenconnect.se/schemas/csig/1.1/EidCsigSAP-1.1.xsd</xs:documentation>
     </xs:annotation>
 
     <xs:element name="SADRequest" type="sap:SADRequestType"/>
