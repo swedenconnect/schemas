@@ -6,7 +6,8 @@
 
   <groupId>se.swedenconnect.schemas.csig</groupId>
   <artifactId>dss-ext11-jaxb</artifactId>
-  <packaging>jar</packaging>
+  <version>1.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>  
 
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
@@ -56,19 +57,19 @@
     <dependency>
       <groupId>se.swedenconnect.schemas</groupId>
       <artifactId>xmlsec-jaxb-workaround</artifactId>
-      <version>${project.version}</version>
+      <version>1.0.0</version>
     </dependency>
       
     <dependency>
       <groupId>se.swedenconnect.schemas</groupId>
       <artifactId>saml-jaxb</artifactId>
-      <version>${project.version}</version>
+      <version>1.0.0</version>
     </dependency>
     
     <dependency>
       <groupId>se.swedenconnect.schemas</groupId>
       <artifactId>oasis-dss-jaxb</artifactId>
-      <version>${project.version}</version>
+      <version>1.0.0</version>
     </dependency>    
           
   </dependencies>
