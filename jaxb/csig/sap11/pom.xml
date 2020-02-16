@@ -5,13 +5,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>se.swedenconnect.schemas.csig</groupId>
-  <artifactId>sap10-jaxb</artifactId>
+  <artifactId>sap11-jaxb</artifactId>
   <packaging>jar</packaging>
 
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
     <artifactId>csig-schemas-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <name>Sweden Connect Schemas :: Signature Activation Protocol schema 1.1 JAXB</name>

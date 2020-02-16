@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>se.swedenconnect.schemas.cert</groupId>
+  <artifactId>authcontextinfo-schemas-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <parent>
+    <groupId>se.swedenconnect.schemas</groupId>
+    <artifactId>schemas-parent</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+  </parent>
+
+  <name>Sweden Connect Schemas :: Parent POM for SAML Authentication Context Info schemas</name>
+  <description>Parent POM for SAML Authentication Context Info</description>
+  <url>https://github.com/swedenconnect/schemas</url>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/swedenconnect/schemas.git</connection>
+    <developerConnection>scm:git:https://github.com/swedenconnect/schemas.git</developerConnection>
+    <url>https://github.com/swedenconnect/schemas/tree/master</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Martin Lindström</name>
+      <email>martin@idsec.se</email>
+      <organization>IDsec Solutions AB</organization>
+      <organizationUrl>http://www.idsec.se</organizationUrl>
+    </developer>
+    
+    <developer>
+      <name>Stefan Santesson</name>
+      <email>stefan@idsec.se</email>
+      <organization>IDsec Solutions AB</organization>
+      <organizationUrl>http://www.idsec.se</organizationUrl>
+    </developer>
+  </developers>
+
+  <properties>
+  </properties>
+  
+  <dependencyManagement>
+
+    <dependencies>
+
+    </dependencies>
+
+  </dependencyManagement>
+
+  <modules>
+    <module>auth-context-info</module>
+    <module>ext-auth-info</module>
+  </modules>
+
+</project>

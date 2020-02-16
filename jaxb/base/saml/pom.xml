@@ -10,7 +10,7 @@
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
     <artifactId>base-schemas-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <name>Sweden Connect Schemas :: SAML JAXB</name>
@@ -55,7 +55,7 @@
     <dependency>
       <groupId>se.swedenconnect.schemas</groupId>
       <artifactId>xmlsec-jaxb-workaround</artifactId>
-      <version>${project.version}</version>
+      <version>1.0.1-SNAPSHOT</version>
     </dependency>
         
   </dependencies>
