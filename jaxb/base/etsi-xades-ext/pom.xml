@@ -10,7 +10,7 @@
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
     <artifactId>base-schemas-parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
   </parent>
 
   <name>Sweden Connect Schemas :: ETSI XAdES Extension JAXB</name>
@@ -55,13 +55,13 @@
     <dependency>
       <groupId>se.swedenconnect.schemas</groupId>
       <artifactId>xmlsec-jaxb-workaround</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.0.1</version>
     </dependency>
     
     <dependency>
       <groupId>se.swedenconnect.schemas</groupId>
       <artifactId>etsi-xades-jaxb</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>    
               
   </dependencies>
