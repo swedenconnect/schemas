@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    version="1.1.2"
     xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-    targetNamespace="http://id.elegnamnden.se/csig/1.2/dss-ext/ns"
+    targetNamespace="http://id.elegnamnden.se/csig/1.1/dss-ext/ns"
     xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dss="urn:oasis:names:tc:dss:1.0:core:schema"
-    xmlns:csig="http://id.elegnamnden.se/csig/1.2/dss-ext/ns">
+    xmlns:csig="http://id.elegnamnden.se/csig/1.1/dss-ext/ns">
 
   <xs:annotation>
     <xs:documentation>
-      Schema location URL: https://docs.swedenconnect.se/schemas/csig/1.2/EidCentralSigDssExt-1.2-DRAFT.xsd
+      Version: 1.1.2
+      Schema location URL: https://docs.swedenconnect.se/schemas/csig/1.1/EidCentralSigDssExt-1.1.2-DRAFT.xsd
     </xs:documentation>
   </xs:annotation>
 
@@ -247,12 +249,10 @@
       <xs:element ref="csig:SignMessage" minOccurs="0" maxOccurs="1" />
       <xs:element ref="csig:OtherRequestInfo" minOccurs="0" />
     </xs:sequence>
-    <xs:attribute name="Version" type="xs:string" use="optional" default="1.2">
+    <xs:attribute name="Version" type="xs:string" use="optional" default="1.1">
       <xs:annotation>
         <xs:documentation>
-          The version of this specification. If absent, the version value defaults to "1.2". 
-          This attribute provide means for the receiving service to determine the 
-          expected semantics of the response based on protocol version.
+          The version of the DSS extensions specification. If absent, the version value defaults to "1.1". 
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
@@ -266,12 +266,10 @@
       <xs:element ref="csig:SignatureCertificateChain" minOccurs="0" />
       <xs:element ref="csig:OtherResponseInfo" minOccurs="0" />
     </xs:sequence>
-    <xs:attribute name="Version" type="xs:string" default="1.2">
+    <xs:attribute name="Version" type="xs:string" default="1.1">
       <xs:annotation>
         <xs:documentation>
-          The version of this specification. If absent, the version value defaults to "1.2". 
-          This attribute provide means for the receiving service to determine the 
-          expected semantics of the response based on protocol version.
+          The version of the DSS specification. If absent, the version value defaults to "1.1". 
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
