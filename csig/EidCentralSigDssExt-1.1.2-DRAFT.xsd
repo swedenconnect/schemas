@@ -69,6 +69,16 @@
       </xs:documentation>
     </xs:annotation>
   </xs:element>
+  
+  <xs:element name="AuthnProfile" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>
+        An opaque string that can be used to inform the Signing Service about 
+        specific requirements regarding the user authentication at the given 
+        Identity Provider.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
 
   <xs:element name="SignRequester" type="saml:NameIDType">
     <xs:annotation>
@@ -225,7 +235,7 @@
 
   <xs:complexType name="SignRequestExtensionType">
     <xs:sequence>
-      <xs:element ref="csig:RequestTime"/>
+      <xs:element ref="csig:RequestTime" />
       <xs:element ref="saml:Conditions">
         <xs:annotation>
           <xs:documentation>
@@ -242,7 +252,14 @@
       </xs:element>
       <xs:element ref="csig:Signer" minOccurs="0" />
       <xs:element ref="csig:IdentityProvider" />
-      <xs:element ref="csig:SignRequester" />
+      <xs:element ref="csig:AuthnProfile" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            If set, the Version attribute MUST be 1.4 or higher.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="csig:SignRequester" />      
       <xs:element ref="csig:SignService" />
       <xs:element ref="csig:RequestedSignatureAlgorithm" minOccurs="0" />
       <xs:element ref="csig:CertRequestProperties" minOccurs="0" />
