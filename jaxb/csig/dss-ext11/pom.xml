@@ -6,7 +6,7 @@
 
   <groupId>se.swedenconnect.schemas.csig</groupId>
   <artifactId>dss-ext11-jaxb</artifactId>
-  <version>1.0.2-SNAPSHOT</version>  
+  <version>1.0.2</version>  
   <packaging>jar</packaging>
 
   <parent>
