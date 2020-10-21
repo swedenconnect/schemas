@@ -5,8 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>se.swedenconnect.schemas.csig</groupId>
-  <artifactId>dss-ext11-jaxb</artifactId>  
-  <packaging>jar</packaging>  
+  <artifactId>dss-ext11-jaxb</artifactId>
+  <version>1.0.2-SNAPSHOT</version>  
+  <packaging>jar</packaging>
 
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
@@ -92,7 +93,7 @@
             </goals>
             <configuration>
               <schemaIncludes>
-                <schemaInclude>EidCentralSigDssExt-1.1.xsd</schemaInclude>
+                <schemaInclude>EidCentralSigDssExt-1.1.2-DRAFT.xsd</schemaInclude>
               </schemaIncludes>
               <bindingIncludes>dss-ext.xjb</bindingIncludes>
               <catalog>${basedir}/src/main/resources/dss-ext.cat</catalog>

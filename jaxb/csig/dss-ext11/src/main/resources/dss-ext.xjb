@@ -12,7 +12,7 @@
     <xjc:simple />
   </jaxb:globalBindings>
   
-  <jaxb:bindings schemaLocation="EidCentralSigDssExt-1.1.xsd" node="//xsd:schema">
+  <jaxb:bindings schemaLocation="EidCentralSigDssExt-1.1.2-DRAFT.xsd" node="//xsd:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="se.swedenconnect.schemas.csig.dssext_1_1" />
     </jaxb:schemaBindings>  
