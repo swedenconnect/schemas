@@ -5,6 +5,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:annox="http://annox.dev.java.net"
   xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
   xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
   jaxb:extensionBindingPrefixes="xjc annox">
   
@@ -15,7 +16,12 @@
   <jaxb:bindings schemaLocation="EidCentralSigDssExt-1.1.2-DRAFT.xsd" node="//xsd:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="se.swedenconnect.schemas.csig.dssext_1_1" />
-    </jaxb:schemaBindings>  
+    </jaxb:schemaBindings>
+    <jaxb:bindings node="xsd:complexType[@name='CertRequestPropertiesType']">
+      <jaxb:bindings node="xsd:sequence/xsd:element[@ref='saml:AuthnContextClassRef']">
+        <jaxb:property name="AuthnContextClassRefs" />        
+      </jaxb:bindings>
+    </jaxb:bindings>
   </jaxb:bindings>
   
 </jaxb:bindings>
