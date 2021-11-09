@@ -11,7 +11,7 @@
   <xs:annotation>
     <xs:documentation>
       Version: 1.1.2
-      Schema location URL: https://docs.swedenconnect.se/schemas/csig/1.1/EidCentralSigDssExt-1.1.2-DRAFT.xsd
+      Schema location URL: https://docs.swedenconnect.se/schemas/csig/1.1/EidCentralSigDssExt-1.1.2.xsd
     </xs:documentation>
   </xs:annotation>
 
