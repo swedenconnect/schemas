@@ -1,6 +1,6 @@
 REWRITE_SYSTEM "https://docs.oasis-open.org/security/saml/v2.0/" "maven:se.swedenconnect.schemas:saml-jaxb:jar::!/"
 PUBLIC "urn:oasis:names:tc:dss:1.0:core:schema" "maven:se.swedenconnect.schemas:oasis-dss-jaxb:jar::!/oasis-dss-core-schema-v1.0-os.xsd"
 
-REWRITE_SYSTEM "http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/" "maven:se.swedenconnect.schemas:xmlsec-jaxb-workaround:jar::!/"
-REWRITE_SYSTEM "http://www.w3.org/TR/xmldsig-core/" "maven:se.swedenconnect.schemas:xmlsec-jaxb-workaround:jar::!/"
-REWRITE_SYSTEM "http://www.w3.org/TR/2002/REC-xmlenc-core-20021210/" "maven:se.swedenconnect.schemas:xmlsec-jaxb-workaround:jar::!/"
+REWRITE_SYSTEM "http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/" "maven:org.apache.santuario:xmlsec:jar::!/"
+REWRITE_SYSTEM "http://www.w3.org/TR/xmldsig-core/" "maven:org.apache.santuario:xmlsec:jar::!/"
+REWRITE_SYSTEM "http://www.w3.org/TR/2002/REC-xmlenc-core-20021210/" "maven:org.apache.santuario:xmlsec:jar::!/"
