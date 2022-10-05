@@ -9,7 +9,7 @@
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
     <artifactId>schemas-parent</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <version>2.0.1</version>
   </parent>
 
   <name>Sweden Connect Schemas :: Parent POM for base JAXB projects</name>
