@@ -88,7 +88,7 @@
       <dependency>
         <groupId>org.jvnet.jaxb2_commons</groupId>
         <artifactId>jaxb2-basics-runtime</artifactId>
-        <version>1.11.1</version>
+        <version>1.11.1-PUBLISHED-BY-MISTAKE</version>
       </dependency>
 
       <dependency>
@@ -251,7 +251,7 @@
               <id>enforce</id>
               <configuration>
                 <rules>
-                  <dependencyConvergence />
+                  <dependencyConvergence/>
                 </rules>
               </configuration>
               <goals>
