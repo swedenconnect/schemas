@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+<bindings xmlns="https://jakarta.ee/xml/ns/jaxb" version="3.0">
   <!--
 
-  Borrowed from xmlsec 2.0.10 and patched with: if-exists="true"
+  Borrowed from xmlsec 3.0.2 and patched with: if-exists="true"
   
   -->
-  <bindings scd="x-schema::tns" xmlns:tns="http://www.w3.org/2009/xmlenc11#" if-exists="true">
+  
+  <bindings xmlns:tns="http://www.w3.org/2009/xmlenc11#" scd="x-schema::tns" if-exists="true">
     <schemaBindings map="false">
       <package name="org.apache.xml.security.binding.xmlenc11"/>
     </schemaBindings>
@@ -31,7 +32,56 @@
       <class ref="org.apache.xml.security.binding.xmlenc11.PRFAlgorithmIdentifierType"/>
     </bindings>
   </bindings>
-  <bindings scd="x-schema::tns" xmlns:tns="http://www.w3.org/2000/09/xmldsig#" if-exists="true">
+  <bindings xmlns:tns="http://www.xmlsecurity.org/NS/configuration" scd="x-schema::tns" if-exists="true">
+    <schemaBindings map="false">
+      <package name="org.apache.xml.security.configuration"/>
+    </schemaBindings>
+    <bindings scd="~tns:ConfigurationType">
+      <class ref="org.apache.xml.security.configuration.ConfigurationType"/>
+    </bindings>
+    <bindings scd="~tns:AlgorithmType">
+      <class ref="org.apache.xml.security.configuration.AlgorithmType"/>
+    </bindings>
+    <bindings scd="~tns:TransformAlgorithmType">
+      <class ref="org.apache.xml.security.configuration.TransformAlgorithmType"/>
+    </bindings>
+    <bindings scd="~tns:ResolverType">
+      <class ref="org.apache.xml.security.configuration.ResolverType"/>
+    </bindings>
+    <bindings scd="~tns:PropertyType">
+      <class ref="org.apache.xml.security.configuration.PropertyType"/>
+    </bindings>
+    <bindings scd="~tns:TransformAlgorithmsType">
+      <class ref="org.apache.xml.security.configuration.TransformAlgorithmsType"/>
+    </bindings>
+    <bindings scd="~tns:HandlerType">
+      <class ref="org.apache.xml.security.configuration.HandlerType"/>
+    </bindings>
+    <bindings scd="~tns:SecurityHeaderHandlersType">
+      <class ref="org.apache.xml.security.configuration.SecurityHeaderHandlersType"/>
+    </bindings>
+    <bindings scd="~tns:PropertiesType">
+      <class ref="org.apache.xml.security.configuration.PropertiesType"/>
+    </bindings>
+    <bindings scd="~tns:JCEAlgorithmMappingsType">
+      <class ref="org.apache.xml.security.configuration.JCEAlgorithmMappingsType"/>
+    </bindings>
+    <bindings scd="~tns:ResourceResolversType">
+      <class ref="org.apache.xml.security.configuration.ResourceResolversType"/>
+    </bindings>
+    <bindings scd="~tns:inOutAttrType">
+      <typesafeEnumClass ref="org.apache.xml.security.configuration.InOutAttrType"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.w3.org/2001/10/xml-exc-c14n#" scd="x-schema::tns" if-exists="true">
+    <schemaBindings map="false">
+      <package name="org.apache.xml.security.binding.excc14n"/>
+    </schemaBindings>
+    <bindings scd="~tns:InclusiveNamespaces">
+      <class ref="org.apache.xml.security.binding.excc14n.InclusiveNamespaces"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.w3.org/2000/09/xmldsig#" scd="x-schema::tns" if-exists="true">
     <schemaBindings map="false">
       <package name="org.apache.xml.security.binding.xmldsig"/>
     </schemaBindings>
@@ -102,48 +152,7 @@
       <class ref="org.apache.xml.security.binding.xmldsig.X509IssuerSerialType"/>
     </bindings>
   </bindings>
-  <bindings scd="x-schema::tns" xmlns:tns="http://www.w3.org/2001/04/xmlenc#" if-exists="true">
-    <schemaBindings map="false">
-      <package name="org.apache.xml.security.binding.xmlenc"/>
-    </schemaBindings>
-    <bindings scd="~tns:CipherDataType">
-      <class ref="org.apache.xml.security.binding.xmlenc.CipherDataType"/>
-    </bindings>
-    <bindings scd="~tns:CipherReferenceType">
-      <class ref="org.apache.xml.security.binding.xmlenc.CipherReferenceType"/>
-    </bindings>
-    <bindings scd="~tns:EncryptedDataType">
-      <class ref="org.apache.xml.security.binding.xmlenc.EncryptedDataType"/>
-    </bindings>
-    <bindings scd="~tns:EncryptedKeyType">
-      <class ref="org.apache.xml.security.binding.xmlenc.EncryptedKeyType"/>
-    </bindings>
-    <bindings scd="~tns:AgreementMethodType">
-      <class ref="org.apache.xml.security.binding.xmlenc.AgreementMethodType"/>
-    </bindings>
-    <bindings scd="tns:ReferenceList">
-      <class ref="org.apache.xml.security.binding.xmlenc.ReferenceList"/>
-    </bindings>
-    <bindings scd="~tns:ReferenceType">
-      <class ref="org.apache.xml.security.binding.xmlenc.ReferenceType"/>
-    </bindings>
-    <bindings scd="~tns:EncryptionPropertiesType">
-      <class ref="org.apache.xml.security.binding.xmlenc.EncryptionPropertiesType"/>
-    </bindings>
-    <bindings scd="~tns:EncryptionPropertyType">
-      <class ref="org.apache.xml.security.binding.xmlenc.EncryptionPropertyType"/>
-    </bindings>
-    <bindings scd="~tns:EncryptedType">
-      <class ref="org.apache.xml.security.binding.xmlenc.EncryptedType"/>
-    </bindings>
-    <bindings scd="~tns:EncryptionMethodType">
-      <class ref="org.apache.xml.security.binding.xmlenc.EncryptionMethodType"/>
-    </bindings>
-    <bindings scd="~tns:TransformsType">
-      <class ref="org.apache.xml.security.binding.xmlenc.TransformsType"/>
-    </bindings>
-  </bindings>
-  <bindings scd="x-schema::tns" xmlns:tns="http://www.w3.org/2009/xmldsig11#" if-exists="true">
+  <bindings xmlns:tns="http://www.w3.org/2009/xmldsig11#" scd="x-schema::tns" if-exists="true">
     <schemaBindings map="false">
       <package name="org.apache.xml.security.binding.xmldsig11"/>
     </schemaBindings>
@@ -187,13 +196,72 @@
       <class ref="org.apache.xml.security.binding.xmldsig11.ECValidationDataType"/>
     </bindings>
   </bindings>
-  <bindings scd="x-schema::tns" xmlns:tns="http://www.w3.org/2001/10/xml-exc-c14n#" if-exists="true">
+  <bindings xmlns:tns="http://www.w3.org/2001/04/xmlenc#" scd="x-schema::tns" if-exists="true">
     <schemaBindings map="false">
-      <package name="org.apache.xml.security.binding.excc14n"/>
+      <package name="org.apache.xml.security.binding.xmlenc"/>
     </schemaBindings>
-    <bindings scd="~tns:InclusiveNamespaces">
-      <class ref="org.apache.xml.security.binding.excc14n.InclusiveNamespaces"/>
+    <bindings scd="~tns:CipherDataType">
+      <class ref="org.apache.xml.security.binding.xmlenc.CipherDataType"/>
+    </bindings>
+    <!--
+    <bindings scd="~tns:CipherValueType">
+      <class ref="org.apache.xml.security.binding.xmlenc.CipherValueType"/>
+    </bindings>
+    -->
+    <bindings scd="~tns:CipherReferenceType">
+      <class ref="org.apache.xml.security.binding.xmlenc.CipherReferenceType"/>
+    </bindings>
+    <bindings scd="~tns:EncryptedDataType">
+      <class ref="org.apache.xml.security.binding.xmlenc.EncryptedDataType"/>
+    </bindings>
+    <bindings scd="~tns:EncryptedKeyType">
+      <class ref="org.apache.xml.security.binding.xmlenc.EncryptedKeyType"/>
+    </bindings>
+    <bindings scd="~tns:AgreementMethodType">
+      <class ref="org.apache.xml.security.binding.xmlenc.AgreementMethodType"/>
+    </bindings>
+    <bindings scd="tns:ReferenceList">
+      <class ref="org.apache.xml.security.binding.xmlenc.ReferenceList"/>
+    </bindings>
+    <bindings scd="~tns:ReferenceType">
+      <class ref="org.apache.xml.security.binding.xmlenc.ReferenceType"/>
+    </bindings>
+    <bindings scd="~tns:EncryptionPropertiesType">
+      <class ref="org.apache.xml.security.binding.xmlenc.EncryptionPropertiesType"/>
+    </bindings>
+    <bindings scd="~tns:EncryptionPropertyType">
+      <class ref="org.apache.xml.security.binding.xmlenc.EncryptionPropertyType"/>
+    </bindings>
+    <bindings scd="~tns:EncryptedType">
+      <class ref="org.apache.xml.security.binding.xmlenc.EncryptedType"/>
+    </bindings>
+    <bindings scd="~tns:EncryptionMethodType">
+      <class ref="org.apache.xml.security.binding.xmlenc.EncryptionMethodType"/>
+    </bindings>
+    <bindings scd="~tns:TransformsType">
+      <class ref="org.apache.xml.security.binding.xmlenc.TransformsType"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.w3.org/2004/08/xop/include" scd="x-schema::tns" if-exists="true">
+    <schemaBindings map="false">
+      <package name="org.apache.xml.security.binding.xop"/>
+    </schemaBindings>
+    <bindings scd="~tns:Include">
+      <class ref="org.apache.xml.security.binding.xop.Include"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.w3.org/2007/05/xmldsig-more#" scd="x-schema::tns" if-exists="true">
+    <schemaBindings map="false">
+      <package name="org.apache.xml.security.binding.xmldsig.pss"/>
+    </schemaBindings>
+    <bindings scd="tns:RSAPSSParams">
+      <class ref="org.apache.xml.security.binding.xmldsig.pss.RSAPSSParams"/>
+    </bindings>
+    <bindings scd="~tns:RSAPSSParamsType">
+      <class ref="org.apache.xml.security.binding.xmldsig.pss.RSAPSSParamsType"/>
+    </bindings>
+    <bindings scd="~tns:MaskGenerationFunctionType">
+      <class ref="org.apache.xml.security.binding.xmldsig.pss.MaskGenerationFunctionType"/>
     </bindings>
   </bindings>
 </bindings>
-
