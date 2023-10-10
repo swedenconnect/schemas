@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Sweden Connect AB
+ * Copyright 2020-2023 Sweden Connect AB
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,13 @@
  */
 package se.swedenconnect.schemas.saml_2_0.assertion;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
 
 /**
  * Utility class that helps creating a {@code JAXBContext} instance to be used for marshalling and unmarshalling objects
  * from this package.
- * 
+ *
  * @author Martin Lindström (martin@litsec.se)
  */
 public class JAXBContextFactory {
@@ -39,7 +39,7 @@ public class JAXBContextFactory {
   /**
    * Gets the packages holding JAXB classes for the schema imports of the schema that is implemented by the classes of
    * this package.
-   * 
+   *
    * @return an array of package names
    */
   public static String[] getDependentPackages() {
@@ -48,7 +48,7 @@ public class JAXBContextFactory {
 
   /**
    * Creates a {@code JAXBContext} that can be used to marshall/unmarshall an object from this package.
-   * 
+   *
    * @return a JAXBContext
    * @throws JAXBException
    *           for error creating the context

@@ -9,7 +9,7 @@
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
     <artifactId>schemas-parent</artifactId>
-    <version>2.0.1</version>
+    <version>3.0.0-SNAPSHOT</version>
   </parent>
 
   <name>Sweden Connect Schemas :: Parent POM for base JAXB projects</name>
@@ -48,19 +48,11 @@
   <properties>
   </properties>
   
-  <dependencies>
-         
-    <dependency>
-      <groupId>org.apache.santuario</groupId>
-      <artifactId>xmlsec</artifactId>
-    </dependency>
-          
+  <dependencies>          
   </dependencies>
 
   <modules>
-    <!-- 
     <module>xmlsec-jaxb-workaround</module>
-    -->
     <module>saml</module>
     <module>oasis-dss</module>
     <module>etsi-xades</module>

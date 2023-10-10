@@ -6,7 +6,7 @@
   <groupId>se.swedenconnect.schemas</groupId>
   <artifactId>schemas-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.0.1</version>
+  <version>3.0.0-SNAPSHOT</version>
 
   <name>Sweden Connect Schemas :: Parent POM for JAXB projects</name>
   <description>Parent POM for JAXB projects for Sweden Connect schemas</description>
@@ -56,12 +56,18 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <java.version>11</java.version>
-
-    <jaxb2-basics.version>0.13.1</jaxb2-basics.version>
-    <jaxb2-basics-annotate.version>1.1.0</jaxb2-basics-annotate.version>
-
+    <java.version>17</java.version>
+    
+    <jvnet.jaxb.version>3.0.1</jvnet.jaxb.version>
+    <jackson.version>2.15.2</jackson.version>
   </properties>
+  
+  <modules>
+    <module>base</module>
+    <module>csig</module>
+    <module>cert-auth-context</module>
+    <module>sweden-connect-schemas</module>
+  </modules>    
 
   <dependencyManagement>
 
@@ -70,50 +76,80 @@
       <dependency>
         <groupId>org.apache.santuario</groupId>
         <artifactId>xmlsec</artifactId>
-        <version>2.3.2</version>
+        <version>3.0.2</version>
       </dependency>
 
+<!--
       <dependency>
         <groupId>org.jvnet.annox</groupId>
         <artifactId>annox</artifactId>
         <version>1.0.2</version>
       </dependency>
-
+-->    
+      
       <dependency>
-        <groupId>org.jvnet.jaxb2_commons</groupId>
-        <artifactId>jaxb2-basics</artifactId>
-        <version>${jaxb2-basics.version}</version>
+        <groupId>org.patrodyne.jvnet</groupId>
+        <artifactId>hisrc-basicjaxb-annox-parser</artifactId>
+        <version>2.1.1</version>
       </dependency>
 
       <dependency>
-        <groupId>org.jvnet.jaxb2_commons</groupId>
-        <artifactId>jaxb2-basics-runtime</artifactId>
-        <version>1.11.1</version>
+        <groupId>org.jvnet.jaxb</groupId>
+        <artifactId>jaxb-plugins-tools</artifactId>
+        <version>${jvnet.jaxb.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.jvnet.jaxb2_commons</groupId>
-        <artifactId>jaxb2-basics-annotate</artifactId>
-        <version>${jaxb2-basics-annotate.version}</version>
+        <groupId>org.jvnet.jaxb</groupId>
+        <artifactId>jaxb-plugins-runtime</artifactId>
+        <version>${jvnet.jaxb.version}</version>
       </dependency>
+
+      <dependency>
+        <groupId>org.jvnet.jaxb</groupId>
+        <artifactId>jaxb-plugin-annotate</artifactId>
+        <version>${jvnet.jaxb.version}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>jakarta.xml.bind</groupId>
+        <artifactId>jakarta.xml.bind-api</artifactId>
+        <version>4.0.0</version>
+        <!-- 4? -->
+      </dependency>
+      
+      <dependency>
+        <groupId>org.glassfish.jaxb</groupId>
+        <artifactId>jaxb-runtime</artifactId>
+        <version>4.0.3</version>
+        <scope>provided</scope>
+      </dependency>
+      
+<!--      
+      <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>4.0.3</version>
+        <scope>runtime</scope>
+      </dependency>
+-->
 
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-annotations</artifactId>
-        <version>2.13.4</version>
+        <version>${jackson.version}</version>
       </dependency>
-
-      <dependency>
-        <groupId>org.jvnet.jaxb2_commons</groupId>
-        <artifactId>jaxb2-commons-lang</artifactId>
-        <version>2.4</version>
-      </dependency>
-
+            
     </dependencies>
 
   </dependencyManagement>
 
   <dependencies>
+  
+    <dependency>
+      <groupId>org.apache.santuario</groupId>
+      <artifactId>xmlsec</artifactId>
+    </dependency>
   
     <dependency>
       <groupId>commons-beanutils</groupId>
@@ -124,47 +160,53 @@
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.11.0</version>
+      <version>2.13.0</version>
     </dependency>
 
     <dependency>
-      <groupId>javax.xml.bind</groupId>
-      <artifactId>jaxb-api</artifactId>
-      <version>2.3.1</version>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.patrodyne.jvnet</groupId>
+      <artifactId>hisrc-basicjaxb-annox-parser</artifactId>
+    </dependency>
+    
+    <!--
     <dependency>
       <groupId>org.jvnet.annox</groupId>
       <artifactId>annox</artifactId>
     </dependency>
-
+    -->
+    
     <dependency>
-      <groupId>org.jvnet.jaxb2_commons</groupId>
-      <artifactId>jaxb2-basics</artifactId>
+      <groupId>org.jvnet.jaxb</groupId>
+      <artifactId>jaxb-plugins-tools</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.jvnet.jaxb2_commons</groupId>
-      <artifactId>jaxb2-basics-runtime</artifactId>
+      <groupId>org.jvnet.jaxb</groupId>
+      <artifactId>jaxb-plugins-runtime</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.jvnet.jaxb2_commons</groupId>
-      <artifactId>jaxb2-basics-annotate</artifactId>
+      <groupId>org.jvnet.jaxb</groupId>
+      <artifactId>jaxb-plugin-annotate</artifactId>
     </dependency>
-
+        
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>org.jvnet.jaxb2_commons</groupId>
-      <artifactId>jaxb2-commons-lang</artifactId>
-    </dependency>
-
   </dependencies>
-
+  
   <build>
 
     <pluginManagement>
@@ -174,78 +216,66 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
+          <version>3.11.0</version>
           <configuration>
-            <source>${java.version}</source>
-            <target>${java.version}</target>
+            <release>${java.version}</release>
           </configuration>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.3.1</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-antrun-plugin</artifactId>
-          <version>1.8</version>
+          <version>3.1.0</version>
         </plugin>
 
         <plugin>
-          <groupId>org.jvnet.jaxb2.maven2</groupId>
-          <artifactId>maven-jaxb2-plugin</artifactId>
-          <version>0.14.0</version>
+          <groupId>org.jvnet.jaxb</groupId>
+          <artifactId>jaxb-maven-plugin</artifactId>
+          <version>4.0.0</version>
           <configuration>
             <strict>false</strict>
             <extension>true</extension>
             <episode>true</episode>
             <addIfExistsToEpisodeSchemaBindings>true</addIfExistsToEpisodeSchemaBindings>
+            <useDependenciesAsEpisodes>false</useDependenciesAsEpisodes>
             <schemaDirectory>${basedir}/src/main/resources</schemaDirectory>
             <schemaLanguage>XMLSCHEMA</schemaLanguage>
             <bindingDirectory>${basedir}/src/main/resources</bindingDirectory>
-            <useDependenciesAsEpisodes>true</useDependenciesAsEpisodes>
+            <!--<useDependenciesAsEpisodes>true</useDependenciesAsEpisodes>-->
             <args>
               <arg>-Xannotate</arg>
             </args>
             <plugins>
               <plugin>
-                <groupId>org.jvnet.jaxb2_commons</groupId>
-                <artifactId>jaxb2-basics</artifactId>
-                <version>${jaxb2-basics.version}</version>
+                <groupId>org.jvnet.jaxb</groupId>
+                <artifactId>jaxb-plugins-tools</artifactId>                
+                <version>${jvnet.jaxb.version}</version>
               </plugin>
               <plugin>
-                <groupId>org.jvnet.jaxb2_commons</groupId>
-                <artifactId>jaxb2-basics-annotate</artifactId>
-                <version>${jaxb2-basics-annotate.version}</version>
+                <groupId>org.jvnet.jaxb</groupId>
+                <artifactId>jaxb-plugin-annotate</artifactId>
+                <version>${jvnet.jaxb.version}</version>
               </plugin>
             </plugins>
           </configuration>
-        </plugin>
-
-        <plugin>
-          <groupId>org.jvnet.jaxb2_commons</groupId>
-          <artifactId>jaxb2-basics</artifactId>
-          <version>${jaxb2-basics.version}</version>
-        </plugin>
-
-        <plugin>
-          <groupId>org.jvnet.jaxb2_commons</groupId>
-          <artifactId>jaxb2-basics-annotate</artifactId>
-          <version>${jaxb2-basics-annotate.version}</version>
         </plugin>
         
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.4.1</version>
           <executions>
             <execution>
               <id>enforce</id>
@@ -265,6 +295,25 @@
       </plugins>
 
     </pluginManagement>
+    
+    <plugins>
+      
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+        </plugin>      
+      
+    </plugins>
 
   </build>
 
@@ -278,7 +327,7 @@
           <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.8</version>
+            <version>1.6.13</version>
             <extensions>true</extensions>
             <configuration>
               <serverId>ossrh</serverId>
@@ -295,7 +344,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
+            <version>3.1.0</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
@@ -310,7 +359,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.0.1</version>
+            <version>3.3.0</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
@@ -330,7 +379,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.2.0</version>
+            <version>3.6.0</version>
             <executions>
               <execution>
                 <id>attach-javadoc</id>
@@ -349,11 +398,5 @@
 
     </profile>
   </profiles>
-
-  <modules>
-    <module>base</module>
-    <module>csig</module>
-    <module>cert-auth-context</module>
-  </modules>
 
 </project>

@@ -10,7 +10,7 @@
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
     <artifactId>base-schemas-parent</artifactId>
-    <version>2.0.1</version>
+    <version>3.0.0-SNAPSHOT</version>
   </parent>
 
   <name>Sweden Connect Schemas :: SAML JAXB</name>
@@ -49,14 +49,17 @@
 
   <properties>
   </properties>
+  
+  <dependencies>    
+  </dependencies>
 
   <build>
 
     <plugins>
 
       <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
+        <groupId>org.jvnet.jaxb</groupId>
+        <artifactId>jaxb-maven-plugin</artifactId>
         <goals>
           <goal>generate</goal>
         </goals>
@@ -68,6 +71,13 @@
               <goal>generate</goal>
             </goals>
             <configuration>
+              <episodes>
+                <episode>
+                  <groupId>se.swedenconnect.schemas</groupId>
+                  <artifactId>xmlsec-jaxb-workaround</artifactId>
+                  <version>${project.version}</version>
+                </episode>
+              </episodes>
               <schemaIncludes>
                 <schemaInclude>saml-schema-assertion-2.0.xsd</schemaInclude>
               </schemaIncludes>
