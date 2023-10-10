@@ -25,7 +25,6 @@ import org.w3c.dom.Element;
 
 import se.swedenconnect.schemas.csig.dssext_1_1.SignMessage;
 import se.swedenconnect.schemas.saml_2_0.assertion.NameIDType;
-import se.swedenconnect.xml.DOMUtils;
 
 /**
  * Test cases for JAXBUnmarshaller.

@@ -24,9 +24,6 @@ import java.util.Objects;
 import org.w3c.dom.Document;
 
 import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.JAXBException;
-import se.swedenconnect.xml.DOMUtils;
-import se.swedenconnect.xml.InternalXMLException;
 
 /**
  * Utility class for storing JAXB root objects in a serializable manner.
@@ -87,7 +84,7 @@ public class JAXBSerializable<T> implements Serializable {
       final byte[] bytes = DOMUtils.nodeToBytes(document);
       out.writeObject(bytes);
     }
-    catch (JAXBException | InternalXMLException e) {
+    catch (final Exception e) {
       throw new IOException("Could not marshall JAXB object", e);
     }
   }
@@ -108,7 +105,7 @@ public class JAXBSerializable<T> implements Serializable {
 
       this.object = JAXBUnmarshaller.unmarshall(document, this.clazz);
     }
-    catch (JAXBException | InternalXMLException e) {
+    catch (final Exception e) {
       throw new IOException("Could not restore JAXB object", e);
     }
   }

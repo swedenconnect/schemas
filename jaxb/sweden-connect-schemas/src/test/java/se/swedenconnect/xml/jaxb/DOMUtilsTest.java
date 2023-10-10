@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package se.swedenconnect.xml;
+package se.swedenconnect.xml.jaxb;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -25,6 +25,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.xml.security.utils.ClassLoaderUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 
 /**
@@ -94,7 +95,7 @@ public class DOMUtilsTest {
 
     final InputStream notXml = new ByteArrayInputStream("<not-valid-xml>".getBytes());
 
-    Assertions.assertThrows(InternalXMLException.class, () -> {
+    Assertions.assertThrows(DOMException.class, () -> {
       DOMUtils.inputStreamToDocument(notXml);
     });
   }
@@ -106,7 +107,7 @@ public class DOMUtilsTest {
     Assertions.assertEquals("Sample", doc.getDocumentElement().getLocalName());
     Assertions.assertEquals("Hej", doc.getDocumentElement().getTextContent());
 
-    Assertions.assertThrows(InternalXMLException.class, () -> {
+    Assertions.assertThrows(DOMException.class, () -> {
       DOMUtils.bytesToDocument("bbashjhiahdua".getBytes());
     });
   }
@@ -120,12 +121,12 @@ public class DOMUtilsTest {
     Assertions.assertEquals("Sample", doc.getDocumentElement().getLocalName());
     Assertions.assertEquals("Hej", doc.getDocumentElement().getTextContent());
 
-    Assertions.assertThrows(InternalXMLException.class, () -> {
+    Assertions.assertThrows(DOMException.class, () -> {
       DOMUtils.base64ToDocument(
           Base64.getEncoder().encodeToString("bbashjhiahdua".getBytes()));
     });
 
-    Assertions.assertThrows(InternalXMLException.class, () -> {
+    Assertions.assertThrows(IllegalArgumentException.class, () -> {
       DOMUtils.base64ToDocument("NOT-BASE-64");
     });
   }

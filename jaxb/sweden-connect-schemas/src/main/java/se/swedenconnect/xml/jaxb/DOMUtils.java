@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package se.swedenconnect.xml;
+package se.swedenconnect.xml.jaxb;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -38,6 +38,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
@@ -48,7 +49,7 @@ import org.xml.sax.SAXException;
  * @author Martin Lindström (martin@idsec.se)
  * @author Stefan Santesson (stefan@idsec.se)
  */
-public class DOMUtils {
+class DOMUtils {
 
   /** The document builder factory. */
   private static DocumentBuilderFactory documentBuilderFactory;
@@ -78,7 +79,7 @@ public class DOMUtils {
       documentBuilderFactory.setExpandEntityReferences(false);
     }
     catch (final ParserConfigurationException e) {
-      throw new InternalXMLException("Failed to setup document builder factory", e);
+      throw new RuntimeException("Failed to setup document builder factory", e);
     }
 
     try {
@@ -95,7 +96,7 @@ public class DOMUtils {
       transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
     }
     catch (final TransformerConfigurationException e) {
-      throw new InternalXMLException("Failed to setup transformer", e);
+      throw new RuntimeException("Failed to setup transformer", e);
     }
   }
 
@@ -114,7 +115,7 @@ public class DOMUtils {
       return documentBuilderFactory.newDocumentBuilder();
     }
     catch (final ParserConfigurationException e) {
-      throw new InternalXMLException("Failed to create document builder", e);
+      throw new DOMException(DOMException.NOT_SUPPORTED_ERR, "Failed to create document builder");
     }
   }
 
@@ -151,7 +152,7 @@ public class DOMUtils {
       return output.toByteArray();
     }
     catch (final TransformerException e) {
-      throw new InternalXMLException("Failed to transform XML node to bytes", e);
+      throw new DOMException(DOMException.NOT_SUPPORTED_ERR, "Failed to transform XML node to bytes");
     }
   }
 
@@ -182,7 +183,7 @@ public class DOMUtils {
         return createDocumentBuilder().parse(stream);
       }
       catch (SAXException | IOException e) {
-        throw new InternalXMLException("Failed to decode bytes into DOM document", e);
+        throw new DOMException(DOMException.SYNTAX_ERR, "Failed to decode bytes into DOM document");
       }
     }
     final Queue<DocumentBuilder> queue = getDocumentBuilderPool(loader);
@@ -191,7 +192,7 @@ public class DOMUtils {
       return documentBuilder.parse(stream);
     }
     catch (SAXException | IOException e) {
-      throw new InternalXMLException("Failed to decode bytes into DOM document", e);
+      throw new DOMException(DOMException.SYNTAX_ERR, "Failed to decode bytes into DOM document");
     }
     finally {
       returnToPool(documentBuilder, queue);
@@ -215,12 +216,7 @@ public class DOMUtils {
    * @return a DOM document
    */
   public static Document base64ToDocument(final String base64) {
-    try {
-      return bytesToDocument(Base64.getDecoder().decode(base64));
-    }
-    catch (final IllegalArgumentException e) {
-      throw new InternalXMLException("Invalid Base64");
-    }
+    return bytesToDocument(Base64.getDecoder().decode(base64));
   }
 
   /**

@@ -22,8 +22,6 @@ import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
-import se.swedenconnect.xml.CustomNamespaceMapper;
-import se.swedenconnect.xml.DOMUtils;
 
 /**
  * Utility class for marshalling of JAXB objects.
