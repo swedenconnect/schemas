@@ -66,6 +66,7 @@
     <module>base</module>
     <module>csig</module>
     <module>cert-auth-context</module>
+    <module>sweden-connect-schemas</module>
   </modules>    
 
   <dependencyManagement>
@@ -118,11 +119,20 @@
       </dependency>
       
       <dependency>
+        <groupId>org.glassfish.jaxb</groupId>
+        <artifactId>jaxb-runtime</artifactId>
+        <version>4.0.3</version>
+        <scope>provided</scope>
+      </dependency>
+      
+<!--      
+      <dependency>
         <groupId>com.sun.xml.bind</groupId>
         <artifactId>jaxb-impl</artifactId>
         <version>4.0.3</version>
         <scope>runtime</scope>
       </dependency>
+-->
 
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
@@ -159,8 +169,8 @@
     </dependency>
 
     <dependency>
-      <groupId>com.sun.xml.bind</groupId>
-      <artifactId>jaxb-impl</artifactId>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
     </dependency>
 
     <dependency>
