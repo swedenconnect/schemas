@@ -11,7 +11,7 @@
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
     <artifactId>csig-schemas-parent</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.0.0</version>
   </parent>
 
   <name>Sweden Connect Schemas :: Signature Activation Protocol schema 1.1 JAXB</name>
