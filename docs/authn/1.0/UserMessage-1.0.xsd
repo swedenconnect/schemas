@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://id.swedenconnect.se/authn/1.0/user-message/ns"
+           xmlns:umsg="http://id.swedenconnect.se/authn/1.0/user-message/ns">
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+  <xs:annotation>
+    <xs:documentation>
+      Schema location URL: https://docs.swedenconnect.se/schemas/authn/1.0/UserMessage-1.0.xsd
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="UserMessage" type="umsg:UserMessageType"/>
+
+  <xs:complexType name="UserMessageType">
+    <xs:annotation>
+      <xs:documentation>List of user messages (in different languages)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Message" type="umsg:MessageType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="mimeType" type="xs:string" default="text/plain">
+      <xs:annotation>
+        <xs:documentation>The MIME type of the user message(s)</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:anyAttribute namespace="##any" processContents="lax"/>
+  </xs:complexType>
+
+  <xs:complexType name="MessageType">
+    <xs:annotation>
+      <xs:documentation>
+        The Base64-encoding of UTF-8 string holding the user message.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:base64Binary">
+        <xs:attribute ref="xml:lang" use="required"/>
+        <xs:anyAttribute namespace="##any" processContents="lax"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>

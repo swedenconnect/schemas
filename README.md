@@ -14,4 +14,4 @@ This repository contains the XML Schemas defined within [Swedish eID Framework](
 
 The schema files are published under [https://docs.swedenconnect.se/schemas](https://docs.swedenconnect.se/schemas/index.html).
 
-Copyright &copy; [The Swedish Agency for Digital Government (DIGG)](https://www.digg.se), 2017-2023. All Rights Reserved.
+Copyright &copy; [The Swedish Agency for Digital Government (Digg)](https://www.digg.se), 2017-2024. All Rights Reserved.
