@@ -237,10 +237,6 @@
       <xs:element ref="saml:Conditions">
         <xs:annotation>
           <xs:documentation>
-            Conditions that MUST be evaluated when assessing the validity of and/or
-            when using the Sign Request. See Section 2.5 of SAML2.0 for additional
-            information on how to evaluate conditions.
-
             This element MUST include the element saml:AudienceRestriction which in
             turn MUST contain one saml:Audience element, specifying the return URL for
             any resulting Sign Response message.
