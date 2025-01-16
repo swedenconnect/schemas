@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -10,7 +10,7 @@
   <parent>
     <groupId>se.swedenconnect.schemas.cert</groupId>
     <artifactId>authcontextinfo-schemas-parent</artifactId>
-    <version>3.0.1</version>
+    <version>3.0.2-SNAPSHOT</version>
   </parent>
 
   <name>Sweden Connect Schemas :: SAML Authentication Context Info XML Schema 1.0 JAXB</name>
@@ -20,7 +20,7 @@
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -38,7 +38,7 @@
       <organization>IDsec Solutions AB</organization>
       <organizationUrl>https://www.idsec.se</organizationUrl>
     </developer>
-    
+
     <developer>
       <name>Stefan Santesson</name>
       <email>stefan@idsec.se</email>
@@ -51,25 +51,25 @@
   </properties>
 
   <dependencies>
-        
+
     <dependency>
       <groupId>se.swedenconnect.schemas</groupId>
       <artifactId>saml-jaxb</artifactId>
       <version>${project.version}</version>
     </dependency>
-    
+
     <dependency>
       <groupId>se.swedenconnect.schemas</groupId>
       <artifactId>oasis-dss-jaxb</artifactId>
       <version>${project.version}</version>
     </dependency>
-            
+
   </dependencies>
 
   <build>
 
     <plugins>
-      
+
       <plugin>
         <groupId>org.jvnet.jaxb</groupId>
         <artifactId>jaxb-maven-plugin</artifactId>
@@ -102,12 +102,12 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>      
-      
-      <!-- 
-        XJC has a bug where it generates an ObjectFactory class for imported code. This will 
-        clash since there is already such a class in place (from the dependency), so we delete 
-        the generated packages.  
+      </plugin>
+
+      <!--
+        XJC has a bug where it generates an ObjectFactory class for imported code. This will
+        clash since there is already such a class in place (from the dependency), so we delete
+        the generated packages.
       -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -117,15 +117,15 @@
             <phase>process-sources</phase>
             <configuration>
               <target>
-                <delete dir="${project.build.directory}/generated-sources/xjc/se/swedenconnect/schemas/saml_2_0" />
+                <delete dir="${project.build.directory}/generated-sources/xjc/se/swedenconnect/schemas/saml_2_0"/>
               </target>
             </configuration>
             <goals>
               <goal>run</goal>
-            </goals>            
+            </goals>
           </execution>
         </executions>
-      </plugin>      
+      </plugin>
 
     </plugins>
 

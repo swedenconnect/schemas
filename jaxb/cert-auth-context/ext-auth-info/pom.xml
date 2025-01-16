@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -8,19 +8,24 @@
   <packaging>jar</packaging>
 
   <parent>
-    <groupId >se.swedenconnect.schemas.cert</groupId>
+    <groupId>se.swedenconnect.schemas.cert</groupId>
     <artifactId>authcontextinfo-schemas-parent</artifactId>
-    <version>3.0.1</version>
+    <version>3.0.2-SNAPSHOT</version>
   </parent>
 
-  <name>Sweden Connect Schemas :: Extended Authentication Information for SAML Authentication Context Info XML Schema 1.0 JAXB</name>
-  <description>JAXB project for Extended Authentication Information for SAML Authentication Context Info XML Schema 1.0</description>
+  <name>
+    Sweden Connect Schemas :: Extended Authentication Information for SAML Authentication Context Info XML Schema 1.0
+    JAXB
+  </name>
+  <description>
+    JAXB project for Extended Authentication Information for SAML Authentication Context Info XML Schema 1.0
+  </description>
   <url>https://github.com/swedenconnect/schemas</url>
 
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -38,7 +43,7 @@
       <organization>IDsec Solutions AB</organization>
       <organizationUrl>https://www.idsec.se</organizationUrl>
     </developer>
-    
+
     <developer>
       <name>Stefan Santesson</name>
       <email>stefan@idsec.se</email>
@@ -50,7 +55,7 @@
   <build>
 
     <plugins>
-      
+
       <plugin>
         <groupId>org.jvnet.jaxb</groupId>
         <artifactId>jaxb-maven-plugin</artifactId>
@@ -65,15 +70,15 @@
               <goal>generate</goal>
             </goals>
             <configuration>
-            <schemaIncludes>
+              <schemaIncludes>
                 <schemaInclude>CertAuthContextExtension-ExtAuthInfo-1.0.xsd</schemaInclude>
               </schemaIncludes>
               <bindingIncludes>eai.xjb</bindingIncludes>
             </configuration>
           </execution>
         </executions>
-      </plugin>      
-      
+      </plugin>
+
     </plugins>
 
   </build>
