@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -10,7 +10,7 @@
   <parent>
     <groupId>se.swedenconnect.schemas</groupId>
     <artifactId>base-schemas-parent</artifactId>
-    <version>3.0.1</version>
+    <version>3.0.2-SNAPSHOT</version>
   </parent>
 
   <name>Sweden Connect Schemas :: SAML JAXB</name>
@@ -20,7 +20,7 @@
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -38,7 +38,7 @@
       <organization>IDsec Solutions AB</organization>
       <organizationUrl>https://www.idsec.se</organizationUrl>
     </developer>
-    
+
     <developer>
       <name>Stefan Santesson</name>
       <email>stefan@idsec.se</email>
@@ -49,8 +49,8 @@
 
   <properties>
   </properties>
-  
-  <dependencies>    
+
+  <dependencies>
   </dependencies>
 
   <build>
@@ -87,7 +87,7 @@
           </execution>
         </executions>
       </plugin>
-      
+
     </plugins>
 
   </build>
