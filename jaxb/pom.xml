@@ -58,7 +58,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>17</java.version>
 
-    <jvnet.jaxb.version>4.0.8</jvnet.jaxb.version>
+    <jvnet.jaxb.version>4.0.9</jvnet.jaxb.version>
     <jackson.version>2.18.2</jackson.version>
   </properties>
 
