@@ -14,4 +14,4 @@ Therefore, we deliver an empty jar with its only purpose of delivering a patched
 This jar will only be used during the build/generation phase.
 
 
-Copyright &copy; 2017-2022´5, [Sweden Connect](https://swedenconnect.se). Licensed under version 2.0 of the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
+Copyright &copy; 2017-2025, [Sweden Connect](https://swedenconnect.se). Licensed under version 2.0 of the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
