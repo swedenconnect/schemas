@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://id.swedenconnect.se/authn/1.0/organization-number/ns"
+           xmlns:mdorgext="http://id.swedenconnect.se/authn/1.0/organization-number/ns">
+
+  <xs:annotation>
+    <xs:documentation>
+      Schema location URL: https://docs.swedenconnect.se/schemas/authn/1.0/OrganizationNumber-1.0.xsd
+      The OrganizationNumber element is intended to be used as an extension to the md:Organization
+      element, enabling the declaration of an organization's number, for example a Swedish
+      "organisationsnummer".
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="OrganizationNumber" type="mdorgext:OrganizationNumberType" />
+
+  <xs:simpleType name="OrganizationNumberType">
+    <xs:annotation>
+      <xs:documentation>An generic organization number</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+
+</xs:schema>
