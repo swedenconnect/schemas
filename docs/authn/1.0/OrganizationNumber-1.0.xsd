@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-           targetNamespace="http://id.swedenconnect.se/authn/1.0/organization-number/ns"
-           xmlns:mdorgext="http://id.swedenconnect.se/authn/1.0/organization-number/ns">
+           targetNamespace="http://id.swedenconnect.se/authn/1.0/md-org-ext/ns"
+           xmlns:mdorgext="http://id.swedenconnect.se/authn/1.0/md-org-ext/ns">
 
   <xs:annotation>
     <xs:documentation>
