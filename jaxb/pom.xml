@@ -6,7 +6,7 @@
   <groupId>se.swedenconnect.schemas</groupId>
   <artifactId>schemas-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.1.0-SNAPSHOT</version>
+  <version>3.1.0</version>
 
   <name>Sweden Connect Schemas :: Parent POM for JAXB projects</name>
   <description>Parent POM for JAXB projects for Sweden Connect schemas</description>
