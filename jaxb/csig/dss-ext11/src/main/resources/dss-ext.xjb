@@ -8,20 +8,20 @@
   xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
   xsi:schemaLocation="https://jakarta.ee/xml/ns/jaxb https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd"
   jaxb:extensionBindingPrefixes="xjc annox">
-  
+
   <jaxb:globalBindings generateElementProperty="false" generateIsSetMethod="true">
     <xjc:simple />
   </jaxb:globalBindings>
-  
-  <jaxb:bindings schemaLocation="EidCentralSigDssExt-1.1.2.xsd" node="//xsd:schema">
+
+  <jaxb:bindings schemaLocation="EidCentralSigDssExt-1.1.4.xsd" node="//xsd:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="se.swedenconnect.schemas.csig.dssext_1_1" />
     </jaxb:schemaBindings>
     <jaxb:bindings node="xsd:complexType[@name='CertRequestPropertiesType']">
       <jaxb:bindings node="xsd:sequence/xsd:element[@ref='saml:AuthnContextClassRef']">
-        <jaxb:property name="AuthnContextClassRefs" />        
+        <jaxb:property name="AuthnContextClassRefs" />
       </jaxb:bindings>
     </jaxb:bindings>
   </jaxb:bindings>
-  
+
 </jaxb:bindings>
