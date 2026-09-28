@@ -334,7 +334,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element ref="csig:SignMessage" minOccurs="0" maxOccurs="1"/>
+      <xs:element ref="csig:SignMessage" minOccurs="0"/>
       <xs:element ref="csig:OtherRequestInfo" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="Version" type="xs:string" default="1.1">
