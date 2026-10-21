@@ -21,7 +21,7 @@
   <groupId>se.swedenconnect.schemas</groupId>
   <artifactId>schemas-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.2.0-SNAPSHOT</version>
+  <version>3.2.0</version>
 
   <name>Sweden Connect Schemas :: Parent POM for JAXB projects</name>
   <description>Parent POM for JAXB projects for Sweden Connect schemas</description>
@@ -227,7 +227,6 @@
             <strict>false</strict>
             <extension>true</extension>
             <episode>true</episode>
-            <addIfExistsToEpisodeSchemaBindings>true</addIfExistsToEpisodeSchemaBindings>
             <useDependenciesAsEpisodes>false</useDependenciesAsEpisodes>
             <schemaDirectory>${basedir}/src/main/resources</schemaDirectory>
             <schemaLanguage>XMLSCHEMA</schemaLanguage>
@@ -363,6 +362,8 @@
             </executions>
             <configuration>
               <detectJavaApiLink>true</detectJavaApiLink>
+              <!-- XJC generates invalid links (e.g. {@link byte[]}) and uncommented members -->
+              <doclint>all,-missing,-reference</doclint>
             </configuration>
           </plugin>
 
