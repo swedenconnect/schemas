@@ -55,7 +55,7 @@ public class JAXBContextFactory {
    * @throws JAXBException for error creating the context
    */
   public static JAXBContext createContext() throws JAXBException {
-    StringBuffer sb = new StringBuffer(JAXBContext.class.getPackage().getName());
+    StringBuffer sb = new StringBuffer(JAXBContextFactory.class.getPackage().getName());
     for (String p : DEPENDENT_PACKAGES) {
       sb.append(':').append(p);
     }

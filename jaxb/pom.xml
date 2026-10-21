@@ -21,7 +21,7 @@
   <groupId>se.swedenconnect.schemas</groupId>
   <artifactId>schemas-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.2.0-SNAPSHOT</version>
+  <version>3.2.0</version>
 
   <name>Sweden Connect Schemas :: Parent POM for JAXB projects</name>
   <description>Parent POM for JAXB projects for Sweden Connect schemas</description>
@@ -63,7 +63,7 @@
     <java.version>21</java.version>
 
     <jvnet.jaxb.version>4.0.16</jvnet.jaxb.version>
-    <jackson.version>3.2.1</jackson.version>
+    <jackson.version>3.2.4</jackson.version>
   </properties>
 
   <modules>
@@ -117,7 +117,7 @@
       <dependency>
         <groupId>org.glassfish.jaxb</groupId>
         <artifactId>jaxb-runtime</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.9</version>
         <scope>provided</scope>
       </dependency>
 
@@ -139,13 +139,13 @@
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
-        <version>3.20.0</version>
+        <version>3.21.0</version>
       </dependency>
 
       <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
-        <version>1.22.1</version>
+        <version>1.23.0</version>
       </dependency>
 
     </dependencies>
@@ -227,7 +227,6 @@
             <strict>false</strict>
             <extension>true</extension>
             <episode>true</episode>
-            <addIfExistsToEpisodeSchemaBindings>true</addIfExistsToEpisodeSchemaBindings>
             <useDependenciesAsEpisodes>false</useDependenciesAsEpisodes>
             <schemaDirectory>${basedir}/src/main/resources</schemaDirectory>
             <schemaLanguage>XMLSCHEMA</schemaLanguage>
@@ -306,7 +305,7 @@
           <plugin>
             <groupId>org.sonatype.central</groupId>
             <artifactId>central-publishing-maven-plugin</artifactId>
-            <version>0.11.0</version>
+            <version>0.12.0</version>
             <extensions>true</extensions>
             <configuration>
               <publishingServerId>central</publishingServerId>
@@ -363,6 +362,8 @@
             </executions>
             <configuration>
               <detectJavaApiLink>true</detectJavaApiLink>
+              <!-- XJC generates invalid links (e.g. {@link byte[]}) and uncommented members -->
+              <doclint>all,-missing,-reference</doclint>
             </configuration>
           </plugin>
 
